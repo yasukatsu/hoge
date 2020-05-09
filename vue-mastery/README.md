@@ -1,7 +1,18 @@
-# Vue Mastery
+# Vue Mastery - Intro to Vue.js
 Vue の無料動画チュートリアルをやってみる  
-[URL](https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/)
+[Vue Mastery 公式サイト](https://www.vuemastery.com/)
 
 ## Lessons
-### The Vue Instance
-5/8 着手
+### [The Vue Instance](https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance)
+- How to begin writing a Vue application with a Vue instance, and how to load basic data onto the webpage.
+- The Vue instance is the root of every Vue application
+- The Vue instance plugs into an element in the DOM
+- The Vue instance’s data can be displayed using the mustache-like syntax {{ }} called an expression.
+- Vue is reactive
+
+### [Attribute Binding](https://www.vuemastery.com/courses/intro-to-vue-js/attribute-binding)
+
+- Data can be bound to HTML attributes.
+- Syntax is v-bind: or : for short.
+- The attribute name that comes after the : specifies the attribute we’re binding data to.
+- Inside the attribute’s quotes, we reference the data we’re binding to.
