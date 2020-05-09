@@ -4,12 +4,25 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <div class="nav-bar"></div>
     <div id="app">
-        <h1>{{ product }}</h1>
-        <h1>{{ description }}</h1>
+        <div class="product">
+
+            <div class="product-image">
+                <a :href="url" target="_blank" rel="noopener noreferrer">
+                    <img :src="image" :alt="altText" :href="url">
+                </a>
+            </div>
+
+            <div class="product-info">
+                <h1>{{ product }}</h1>
+            </div>
+
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
