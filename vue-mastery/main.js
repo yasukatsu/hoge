@@ -13,12 +13,14 @@ var app = new Vue({
             {
                 variantId: 2234,
                 variantColor: "green",
-                variantImage: "./assets/vmSocks-green.jpg"
+                variantImage: "./assets/vmSocks-green.jpg",
+                variantUrl: "https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg"
             },
             {
                 variantId: 2235,
                 variantColor: "blue",
-                variantImage: "./assets/vmSocks-blue.jpg"
+                variantImage: "./assets/vmSocks-blue.jpg",
+                variantUrl: "https://www.vuemastery.com/images/challenges/vmSocks-blue-onWhite.jpg"
             }
         ],
         cart: 0,
@@ -30,8 +32,9 @@ var app = new Vue({
         ReduceCart() {
             this.cart -= 1
         },
-        updateProduct(variantImage) {
+        updateProduct(variantImage, variantUrl) {
             this.image = variantImage
+            this.url = variantUrl
         }
     }
 })
