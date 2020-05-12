@@ -5,7 +5,8 @@ var app = new Vue({
         image: './assets/vmSocks-green.jpg',
         altText: 'a pair of socks',
         url: 'https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg',
-        inventory: 0,
+        inStock: false,
+        lineThrough: "line-through",
         onSale: true,
         details: ["80% cotton", "20% polyester", "Gender-neutral"],
         sizes: ["25cm", "25.5cm", "26cm", "26.5cm"],
@@ -29,8 +30,14 @@ var app = new Vue({
         addToCart() {
             this.cart += 1
         },
-        ReduceCart() {
+        reduceCart() {
             this.cart -= 1
+        },
+        inCart() {
+            if (this.cart <= 0) {
+                return false
+            }
+            return true
         },
         updateProduct(variantImage, variantUrl) {
             this.image = variantImage
