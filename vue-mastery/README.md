@@ -52,3 +52,10 @@ In this lesson we’ll be learning how to listen for DOM events that we can use 
 - The `v-on` directive can trigger a method
 - Triggered methods can take in arguments
 - `this` refers to the current Vue instance’s data as well as other methods declared inside the instance
+
+### [Class & Style Binding](https://www.vuemastery.com/courses/intro-to-vue-js/class-&-style-binding)
+In this lesson we’ll be learning how to dynamically style our HTML by binding data to an element’s style attribute, as well as its class.
+#### Point
+- Data can be bound to an element’s style attribute
+- Data can be bound to an element’s class
+- We can use expressions inside an element’s class binding to evaluate whether a class should appear or not
