@@ -2,10 +2,9 @@ var app = new Vue({
     el: '#app',
     data: {
         product: 'Socks',
-        image: './assets/vmSocks-green.jpg',
+        brand: 'Vue Mastery',
+        selectedVariant: 0,
         altText: 'a pair of socks',
-        url: 'https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg',
-        inStock: false,
         lineThrough: "line-through",
         onSale: true,
         details: ["80% cotton", "20% polyester", "Gender-neutral"],
@@ -15,13 +14,15 @@ var app = new Vue({
                 variantId: 2234,
                 variantColor: "green",
                 variantImage: "./assets/vmSocks-green.jpg",
-                variantUrl: "https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg"
+                variantUrl: "https://www.vuemastery.com/images/challenges/vmSocks-green-onWhite.jpg",
+                variantQuantity: 10
             },
             {
                 variantId: 2235,
                 variantColor: "blue",
                 variantImage: "./assets/vmSocks-blue.jpg",
-                variantUrl: "https://www.vuemastery.com/images/challenges/vmSocks-blue-onWhite.jpg"
+                variantUrl: "https://www.vuemastery.com/images/challenges/vmSocks-blue-onWhite.jpg",
+                variantQuantity: 0
             }
         ],
         cart: 0,
@@ -33,15 +34,34 @@ var app = new Vue({
         reduceCart() {
             this.cart -= 1
         },
+        updateProduct(index) {
+            this.selectedVariant = index
+            // console.log(index)
+        }
+    },
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product
+        },
+        image() {
+            return this.variants[this.selectedVariant].variantImage
+        },
+        url() {
+            return this.variants[this.selectedVariant].variantUrl
+        },
+        inStock() {
+            return this.variants[this.selectedVariant].variantQuantity
+        },
         inCart() {
             if (this.cart <= 0) {
                 return false
             }
             return true
         },
-        updateProduct(variantImage, variantUrl) {
-            this.image = variantImage
-            this.url = variantUrl
+        challenge() {
+            if (this.onSale) {
+                return this.brand + ' ' + this.product
+            }
         }
     }
 })

@@ -59,3 +59,9 @@ In this lesson we’ll be learning how to dynamically style our HTML by binding 
 - Data can be bound to an element’s style attribute
 - Data can be bound to an element’s class
 - We can use expressions inside an element’s class binding to evaluate whether a class should appear or not
+
+### [Computed Properties](https://www.vuemastery.com/courses/intro-to-vue-js/vue-computed-properties)
+In this lesson, we’ll be covering Computed Properties. These are properties on the Vue instance that calculate a value rather than store a value.
+#### Point
+- Computed properties calculate a value rather than store a value.
+- Computed properties can use data from your app to calculate its values.
