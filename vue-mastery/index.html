@@ -19,8 +19,8 @@
             </div>
 
             <div class="product-info">
-                <h1>{{ product }}</h1>
-                <span v-show="onSale">On Sale!</span>
+                <h1>{{ title }}</h1>
+                <span v-show="onSale">{{ challenge }}</span>
                 <p v-if="inStock">In Stock</p>
                 <p v-else
                    :style="{ textDecoration: lineThrough }"
@@ -37,10 +37,10 @@
                 </ul>
 
                 <div class="color-box"
-                     v-for="variant in variants" 
+                     v-for="(variant, index) in variants" 
                      :key="variant.variantId"
                      :style="{ backgroundColor: variant.variantColor }"
-                     @mouseover="updateProduct(variant.variantImage, variant.variantUrl)"
+                     @mouseover="updateProduct(index)"
                      >
                 </div>
 
@@ -51,8 +51,8 @@
                 </button>
                 <br>
                 <button @click="reduceCart"
-                        :disabled="cart <= 0"
-                        :class="{ disabledButton: cart <= 0 }"
+                        :disabled="!inCart"
+                        :class="{ disabledButton: !inCart }"
                         >Reduce Cart
                 </button>
                 <div class="cart">
