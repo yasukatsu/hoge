@@ -3,6 +3,10 @@ Vue.component('product', {
         premium: {
             type: Boolean,
             required: true
+        },
+        cart: {
+            type: Array,
+            required: []
         }
     },
     template: `
@@ -49,9 +53,7 @@ Vue.component('product', {
                         :class="{ disabledButton: !inCart }"
                         >Reduce Cart
                 </button>
-                <div class="cart">
-                    <p>Cart ({{ cart }})</p>
-                </div>
+
             </div>
 
         </div>        
@@ -82,19 +84,18 @@ Vue.component('product', {
                     variantQuantity: 0
                 }
             ],
-            cart: 0,
         }
     },
     methods: {
         addToCart() {
-            this.cart += 1
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId)
         },
         reduceCart() {
-            this.cart -= 1
+            // this.cart -= 1
+            this.$emit('reduce-cart', this.variants[this.selectedVariant].variantId)
         },
         updateProduct(index) {
             this.selectedVariant = index
-            // console.log(index)
         }
     },
     computed: {
@@ -111,7 +112,9 @@ Vue.component('product', {
             return this.variants[this.selectedVariant].variantQuantity
         },
         inCart() {
-            if (this.cart <= 0) {
+            const id = this.variants[this.selectedVariant].variantId
+            const exit = this.cart.findIndex((v) => v === id)
+            if (exit === -1) {
                 return false
             }
             return true
@@ -129,6 +132,16 @@ Vue.component('product', {
 var app = new Vue({
     el: '#app',
     data: {
-        premium: true
+        premium: true,
+        cart: []
+    },
+    methods: {
+        addToCart(id) {
+            this.cart.push(id)
+        },
+        reduceCart(id) {
+            const index = this.cart.findIndex((v) => v === id)
+            this.cart.splice(index, 1)
+        }
     }
 })
