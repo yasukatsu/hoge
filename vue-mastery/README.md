@@ -83,3 +83,10 @@ In this lesson we’ll learn how to communicate from a child component up to its
 - A component can use an event handler with the `v-on` directive ( `@` for short) to listen for an event emission, which can trigger a method on the parent
 - A component can `$emit` data along with the announcement that an event has occurred
 - A parent can use data emitted from its child
+
+### [Forms](https://www.vuemastery.com/courses/intro-to-vue-js/forms)
+In this lesson we’ll be learning how to work with forms in Vue in order to collect user input, and also learn how to do some custom form validation.
+- We can use the `v-model` directive to create two-way binding on form elements
+- We can use the `.number` modifier to tell Vue to cast that value as a number, but there is a bug with it
+- We can use the `.prevent` event modifier to stop the page from reloading when the form is submitted
+- We can use Vue to do fairly simple custom form validation
