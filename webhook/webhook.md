@@ -13,3 +13,7 @@ Webhookを利用すると、ユーザーはサービス側がPOSTリクエスト
 
 例えばGitHubのWebhookはリポジトリにプッシュ時、コミット情報をパラメータとしてPOSTリクエストする。
 そのため、プッシュ時にコミット情報をSlackに通知をしたり、メールに通知できる。
+
+## 参考リンク
+
+[Webhookとは？](https://qiita.com/soarflat/items/ed970f6dc59b2ab76169)
